@@ -50,6 +50,42 @@ Exemplo de string de conexão para SQLSERVER:
   - **Associação de Fornecedor**: Ao criar ou editar um produto, é possível selecionar o fornecedor associado.
   - **Ao excluir um Fornecedor os produtos relacionados a ele serão excluidos.
 
+## Estrutura do Projeto
+
+## Interfaces
+- Interfaces definem contratos que especificam os métodos que uma classe deve implementar, sem fornecer a implementação real.
+
+## Por que usar:
+
+- **Abstração**: Permite abstrair a funcionalidade, ocultando detalhes da implementação.
+- **Flexibilidade**: Facilita a troca de implementações diferentes sem alterar o código que depende da interface.
+- **Testabilidade**: Permite a criação de mocks ou stubs para testes unitários.
+- **Repositório**: O padrão de repositório abstrai a lógica de acesso a dados, fornecendo uma camada entre a aplicação e a fonte de dados.
+
+- **Encapsulamento**: Centraliza a lógica de acesso a dados em um único local.
+- **Facilita a manutenção**: Mudanças na lógica de acesso a dados não afetam o restante da aplicação.
+- **Testabilidade**: Permite simular operações de banco de dados em testes unitários.
+- **DTO (Data Transfer Object)**: Um DTO é um objeto que transporta dados entre processos, ajudando a encapsular a forma de transporte dos dados.
+
+
+- **Segurança**: Evita a exposição de entidades de banco de dados diretamente.
+- **Desempenho**: Reduz a quantidade de dados transferidos pela rede.
+- **Desacoplamento**: Desacopla a camada de apresentação da camada de dados, permitindo mudanças independentes em ambas.
+- **Serviço**: Uma classe de serviço encapsula a lógica de negócios da aplicação, utilizando repositórios para acessar os dados.
+
+
+- **Organização**: Separa a lógica de negócios do código do controlador.
+- **Reutilização**: Facilita a reutilização da lógica de negócios em diferentes partes da aplicação.
+- **Testabilidade**: Permite testar a lógica de negócios de forma isolada.
+
+## Benefícios da Estrutura
+- **Modularidade**: Cada componente da aplicação tem uma responsabilidade única, tornando o código mais organizado.
+- **Facilidade de Testes**: Componentes isolados permitem testes unitários mais eficazes.
+- **Manutenibilidade**: Alterações em uma parte da aplicação (como a lógica de negócios ou a lógica de acesso a dados) não afetam outras partes.
+- **Escalabilidade**: A aplicação pode crescer em complexidade sem se tornar incontrolável, graças à separação de responsabilidades.
+- **Reusabilidade**: A lógica de negócios e acesso a dados pode ser facilmente reutilizada em diferentes partes da aplicação ou em outras aplicações.
+
+
 ## Contribuição
 Contribuições são bem-vindas! Sinta-se à vontade para reportar problemas, sugerir novas funcionalidades ou enviar pull requests.
 

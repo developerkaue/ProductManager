@@ -5,17 +5,22 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ProductManagementSystem1.Data;
+using ProductManagementSystem1.Interface;
 using ProductManagementSystem1.Models;
+using ProductManagementSystem1.DTOs;
 
 namespace ProductManagementSystem1.Controllers
 {
     public class ProductsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IProdutoService _produtoService;
 
-        public ProductsController(ApplicationDbContext context)
+        // Construtor combinado
+        public ProductsController(ApplicationDbContext context, IProdutoService produtoService)
         {
             _context = context;
+            _produtoService = produtoService;
         }
 
         // GET: Products
@@ -54,41 +59,26 @@ namespace ProductManagementSystem1.Controllers
         }
 
         // POST: Products/Create
-
-        // POST: Products/Create
-        // POST: Products/Create
-        // POST: Products/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Descricao,Preco,FornecedorId,DataDeCriacao")] Product product)
+        public async Task<IActionResult> Create(ProdutoDTO produtoDto)
         {
+            if (!ModelState.IsValid)
+            {
+                ViewData["Fornecedores"] = new SelectList(await _produtoService.ObterFornecedoresAsync(), "Id", "Nome");
+                return View(produtoDto);
+            }
 
-                // Busca o fornecedor pelo Id
-                var fornecedor = await _context.Fornecedores.FindAsync(product.FornecedorId);
-                if (fornecedor != null)
-                {
-                    // Associa o fornecedor ao produto
-                    product.Fornecedor = fornecedor;
+            var sucesso = await _produtoService.CriarProdutoAsync(produtoDto);
+            if (sucesso)
+            {
+                return RedirectToAction(nameof(Index));
+            }
 
-                    // Adiciona o produto ao contexto e salva no banco de dados
-                    _context.Add(product);
-                    await _context.SaveChangesAsync();
-
-                    return RedirectToAction(nameof(Index));
-                }
-                else
-                {
-                    ModelState.AddModelError("", "Fornecedor não encontrado.");
-                }
-            
-            
-
-            // Se houver erro, reexibir o dropdown de fornecedores
-            ViewData["Fornecedores"] = new SelectList(_context.Fornecedores, "Id", "Nome");
-            return View(product);
+            ModelState.AddModelError("", "Fornecedor não encontrado.");
+            ViewData["Fornecedores"] = new SelectList(await _produtoService.ObterFornecedoresAsync(), "Id", "Nome");
+            return View(produtoDto);
         }
-
-
 
         // GET: Products/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -110,7 +100,6 @@ namespace ProductManagementSystem1.Controllers
             return View(product);
         }
 
-
         // POST: Products/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -121,16 +110,13 @@ namespace ProductManagementSystem1.Controllers
                 return NotFound();
             }
 
-
             // Atualizar o fornecedor associado ao produto
             product.Fornecedor = await _context.Fornecedores.FindAsync(product.FornecedorId);
 
             _context.Update(product);
             await _context.SaveChangesAsync();
-                
 
             return RedirectToAction(nameof(Index));
-
         }
 
         // GET: Products/Delete/5
