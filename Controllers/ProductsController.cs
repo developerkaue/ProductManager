@@ -8,9 +8,11 @@ using ProductManagementSystem1.Data;
 using ProductManagementSystem1.Interface;
 using ProductManagementSystem1.Models;
 using ProductManagementSystem1.DTOs;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ProductManagementSystem1.Controllers
 {
+    [Authorize]
     public class ProductsController : Controller
     {
         private readonly ApplicationDbContext _context;
