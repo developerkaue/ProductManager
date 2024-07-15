@@ -25,5 +25,7 @@ namespace ProductManagementSystem1.Models
 
         // Propriedade de navegação para o Fornecedor
         public Fornecedor Fornecedor { get; set; }
+
+        public int Quantidade { get; set; }
     }
 }

@@ -6,5 +6,7 @@ namespace ProductManagementSystem1.Interface
     {
         Task<Fornecedor> ObterPorIdAsync(int id);
         Task<IEnumerable<Fornecedor>> ObterTodosAsync();
+        Task<string> ObterNomeFornecedorAsync(int fornecedorId);
+
     }
 }

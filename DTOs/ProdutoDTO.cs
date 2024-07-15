@@ -8,5 +8,6 @@
         public decimal Preco { get; set; }
         public int FornecedorId { get; set; }
         public DateTime DataDeCriacao { get; set; }
+        public int Quantidade { get; set; }
     }
 }

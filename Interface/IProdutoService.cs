@@ -5,5 +5,10 @@ namespace ProductManagementSystem1.Interface
     {
         Task<bool> CriarProdutoAsync(ProdutoDTO produtoDto);
         Task<IEnumerable<FornecedorDTO>> ObterFornecedoresAsync();
+
+        Task<IEnumerable<ProdutoDTO>> GetAllAsync();
+        Task<ProdutoDTO> GetByIdAsync(int id);
+
+        Task<string> ObterNomeProdutoAsync(int produtoId);
     }
 }

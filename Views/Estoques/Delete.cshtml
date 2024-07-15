@@ -1,0 +1,21 @@
+﻿@model ProductManagementSystem1.DTOs.EstoqueDTO
+
+<h1>Confirmação de Exclusão</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-4">Produto:</dt>
+        <dd class="col-sm-8">@ViewData["ProdutoNome"]</dd>
+
+        <dt class="col-sm-4">Fornecedor:</dt>
+        <dd class="col-sm-8">@ViewData["FornecedorNome"]</dd>
+
+        <dt class="col-sm-4">Quantidade:</dt>
+        <dd class="col-sm-8">@Model.Quantidade</dd>
+    </dl>
+</div>
+
+<form asp-action="DeleteConfirmed" asp-route-id="@Model.Id" method="post">
+    <input type="submit" value="Confirmar Exclusão" class="btn btn-danger" />
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

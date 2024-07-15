@@ -1,0 +1,28 @@
+﻿@model ProductManagementSystem1.DTOs.EstoqueDTO
+
+<h1>Editando Estoque</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+
+            <dl class="row">
+                <dt class="col-sm-4">Produto:</dt>
+                <dd class="col-sm-8">@ViewData["ProdutoNome"]</dd>
+
+                <dt class="col-sm-4">Fornecedor:</dt>
+                <dd class="col-sm-8">@ViewData["FornecedorNome"]</dd>
+
+                <dt class="col-sm-4">Quantidade:</dt>
+                <dd class="col-sm-8">
+                    <input asp-for="Quantidade" class="form-control" />
+                    <span asp-validation-for="Quantidade" class="text-danger"></span>
+                </dd>
+            </dl>
+            <div class="form-group mt-2">
+            <button type="submit" class="btn btn-primary">Salvar</button>
+            <a asp-action="Index" class="btn btn-secondary">Voltar para Lista</a>
+            </div>
+        </form>
+    </div>
+</div>

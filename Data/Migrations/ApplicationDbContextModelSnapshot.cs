@@ -224,6 +224,32 @@ namespace ProductManagementSystem1.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("ProductManagementSystem1.Models.Estoque", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("FornecedorId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProdutoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantidade")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FornecedorId");
+
+                    b.HasIndex("ProdutoId");
+
+                    b.ToTable("Estoques");
+                });
+
             modelBuilder.Entity("ProductManagementSystem1.Models.Fornecedor", b =>
                 {
                     b.Property<int>("Id")
@@ -272,6 +298,9 @@ namespace ProductManagementSystem1.Data.Migrations
 
                     b.Property<decimal>("Preco")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Quantidade")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -329,6 +358,25 @@ namespace ProductManagementSystem1.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("ProductManagementSystem1.Models.Estoque", b =>
+                {
+                    b.HasOne("ProductManagementSystem1.Models.Fornecedor", "Fornecedor")
+                        .WithMany()
+                        .HasForeignKey("FornecedorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProductManagementSystem1.Models.Product", "Produto")
+                        .WithMany()
+                        .HasForeignKey("ProdutoId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Fornecedor");
+
+                    b.Navigation("Produto");
                 });
 
             modelBuilder.Entity("ProductManagementSystem1.Models.Product", b =>

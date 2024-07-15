@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "UMrw9Byfpbo=",
+  "dgSpecHash": "Y4OJ0cNEkWM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\kaued\\source\\repos\\ProductManagementSystem1\\ProductManagementSystem1.csproj",
+  "projectFilePath": "C:\\Users\\kaued\\source\\repos\\Teste\\ProductManagementSystem1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kaued\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\kaued\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\kaued\\.nuget\\packages\\csvhelper\\33.0.1\\csvhelper.33.0.1.nupkg.sha512",
     "C:\\Users\\kaued\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\kaued\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\kaued\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",

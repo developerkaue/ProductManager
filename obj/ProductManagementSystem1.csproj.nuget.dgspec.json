@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kaued\\source\\repos\\ProductManagementSystem1\\ProductManagementSystem1.csproj": {}
+    "C:\\Users\\kaued\\source\\repos\\Teste\\ProductManagementSystem1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kaued\\source\\repos\\ProductManagementSystem1\\ProductManagementSystem1.csproj": {
+    "C:\\Users\\kaued\\source\\repos\\Teste\\ProductManagementSystem1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kaued\\source\\repos\\ProductManagementSystem1\\ProductManagementSystem1.csproj",
+        "projectUniqueName": "C:\\Users\\kaued\\source\\repos\\Teste\\ProductManagementSystem1.csproj",
         "projectName": "ProductManagementSystem1",
-        "projectPath": "C:\\Users\\kaued\\source\\repos\\ProductManagementSystem1\\ProductManagementSystem1.csproj",
+        "projectPath": "C:\\Users\\kaued\\source\\repos\\Teste\\ProductManagementSystem1.csproj",
         "packagesPath": "C:\\Users\\kaued\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kaued\\source\\repos\\ProductManagementSystem1\\obj\\",
+        "outputPath": "C:\\Users\\kaued\\source\\repos\\Teste\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kaued\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -46,6 +46,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[33.0.1, )"
+            },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.6, )"

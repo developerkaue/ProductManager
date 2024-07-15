@@ -1,0 +1,30 @@
+﻿@model ProductManagementSystem1.DTOs.EstoqueDTO
+
+@{
+    ViewData["Title"] = "Excluir Estoque";
+}
+
+<h1>Excluir Estoque</h1>
+
+<h3>Você tem certeza que deseja excluir este estoque?</h3>
+<div>
+    <h4>Estoque</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Produto
+        </dt>
+        <dt class="col-sm-2">
+            Quantidade
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Quantidade)
+        </dd>
+    </dl>
+
+    <form asp-action="DeleteConfirmed">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Excluir" class="btn btn-danger" /> |
+        <a asp-action="Index">Voltar à lista</a>
+    </form>
+</div>

@@ -77,7 +77,7 @@ namespace ProductManagementSystem1.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            ModelState.AddModelError("", "Fornecedor não encontrado.");
+            ModelState.AddModelError("", "Erro ao criar o produto e o estoque.");
             ViewData["Fornecedores"] = new SelectList(await _produtoService.ObterFornecedoresAsync(), "Id", "Nome");
             return View(produtoDto);
         }
