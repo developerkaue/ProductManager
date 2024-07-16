@@ -11,36 +11,36 @@
         <h3 class="card-title">Você deseja excluir este Produto?</h3>
     <hr />
     <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Descricao)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Descricao)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Preco)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Preco)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FornecedorId)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FornecedorId)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DataDeCriacao)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DataDeCriacao)
-        </dd>
+            <dt class="col-sm-2">
+                Nome:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
+            <dt class="col-sm-2">
+                Descrição:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Descricao)
+            </dd>
+            <dt class="col-sm-2">
+                Preço em R$:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Preco)
+            </dd>
+            <dt class="col-sm-2">
+                Id Fornecedor:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.FornecedorId)
+            </dd>
+            <dt class="col-sm-2">
+                Criado em:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DataDeCriacao)
+            </dd>
     </dl>
 
     <form asp-action="Delete">

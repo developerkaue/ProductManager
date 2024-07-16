@@ -7,7 +7,7 @@ namespace ProductManagementSystem1.Models
         public int Id { get; set; }
 
         [Required]
-        [StringLength(100)]
+        [MaxLength(25)]
         public string Nome { get; set; }
 
         [Required]

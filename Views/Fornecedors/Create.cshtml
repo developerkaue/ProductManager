@@ -4,7 +4,7 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create Fornecedor</h1>
+<h1>Adicionar Fornecedor</h1>
 
 <div class="card">
     <div class="card-body">
@@ -13,13 +13,13 @@
 
             <div class="form-group">
                 <label asp-for="Nome" class="control-label">Nome:</label>
-                <input asp-for="Nome" class="form-control" />
+                <input asp-for="Nome" class="form-control" maxlength="25" />
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="Telefone" class="control-label">Telefone:</label>
-                <input asp-for="Telefone" class="form-control" />
+                <input asp-for="Telefone" class="form-control" id="telefone" />
                 <span asp-validation-for="Telefone" class="text-danger"></span>
             </div>
 
@@ -32,6 +32,13 @@
 </div>
 
 @section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRXbL3Yo5FZdF3E9X5zVb1srBQHlsCpGf6fs6Zq6d" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#telefone').mask('(00) 00000-0000');
+        });
+    </script>
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
